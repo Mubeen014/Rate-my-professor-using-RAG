@@ -1,0 +1,4 @@
+langchain-huggingface
+pinecone-client
+groq
+python-dotenv==1.0.1
