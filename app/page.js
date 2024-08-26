@@ -1,38 +1,53 @@
 'use client'
-import { useState } from 'react';
+
+
+import Link from 'next/link';
+import Head from 'next/head'
+import Header from './Header/page';
+import Hero from './Hero/page';
+import Product from './Product/page';
+import Users from './Users/page';
+import FeaturesSection from './Features/page';
+import Footer from './Footer/page';
 
 export default function Home() {
-  const [text, setText] = useState('');
-  const [result, setResult] = useState([]);
-
-  const handleSubmit = async () => {
-
-    // First, the user data will be converted to embedding.
-    // Then embedding will be used to generate a relevance from pinecone.
-    // Then the result from 
-    const response = await fetch('/api/process', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ text }),
-    });
-
-    const data = await response.json();
-    setResult(data.result);
-  };
+  
 
   return (
     <div>
-      <textarea
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="Enter text here"
-      />
-      <button onClick={handleSubmit}>Submit Question</button>
-      <ul>
-      {result}
-      </ul>
+      
+      
+      
+      <div className="bg-[#00695c] text-white min-h-screen">
+      <Head>
+        <title>AI Chatbot Landing Page</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Header/>
+      <main>
+        <Hero/>
+        <Product/>
+        <Users/>
+        <FeaturesSection/>
+      </main>
+      <Footer/>
+
+      {/* <Head>
+        <title>AI Chatbot Landing Page</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <Header/>           
+      <main>
+        <Hero />
+        <Features />
+        <Pricing />
+      </main>
+
+      <Footer /> */}
     </div>
+    </div>
+    
   );
 }
+
