@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    webpack(config, { buildId, dev, isServer, defaultLoaders, webpack }) {
+      // Enable verbose logging
+      config.infrastructureLogging = { debug: /PackFileCache/ };
+  
+      return config;
+    },
+  };
+  
+  export default nextConfig;
+  

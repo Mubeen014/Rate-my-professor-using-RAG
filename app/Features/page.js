@@ -1,3 +1,4 @@
+'use client'
 import { motion } from 'framer-motion';
 import { FaLightbulb, FaLaptopCode, FaChartLine, FaUserCog, FaCogs, FaLock } from 'react-icons/fa';
 import Image from 'next/image';
